@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Page with Bubbles</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Background styling */
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Bubble styling */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            animation: move 10s infinite linear;
+            bottom: -150px;
+        }
+
+        /* Animation for bubbles */
+        @keyframes move {
+            0% {
+                transform: translateY(0) scale(0.7);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        /* Generate different sizes and positions for bubbles */
+        .bubble:nth-child(1) { width: 100px; height: 100px; left: 10%; animation-delay: 0s; animation-duration: 12s; }
+        .bubble:nth-child(2) { width: 80px; height: 80px; left: 25%; animation-delay: 2s; animation-duration: 10s; }
+        .bubble:nth-child(3) { width: 120px; height: 120px; left: 70%; animation-delay: 1s; animation-duration: 14s; }
+        .bubble:nth-child(4) { width: 90px; height: 90px; left: 50%; animation-delay: 3s; animation-duration: 11s; }
+        .bubble:nth-child(5) { width: 110px; height: 110px; left: 80%; animation-delay: 1.5s; animation-duration: 13s; }
+        .bubble:nth-child(6) { width: 70px; height: 70px; left: 15%; animation-delay: 4s; animation-duration: 9s; }
+        .bubble:nth-child(7) { width: 130px; height: 130px; left: 60%; animation-delay: 2.5s; animation-duration: 11s; }
+        .bubble:nth-child(8) { width: 140px; height: 140px; left: 35%; animation-delay: 0.5s; animation-duration: 10s; }
+        .bubble:nth-child(9) { width: 90px; height: 90px; left: 85%; animation-delay: 3s; animation-duration: 8s; }
+        .bubble:nth-child(10) { width: 150px; height: 150px; left: 40%; animation-delay: 2s; animation-duration: 12s; }
+        .bubble:nth-child(11) { width: 75px; height: 75px; left: 5%; animation-delay: 1s; animation-duration: 9s; }
+        .bubble:nth-child(12) { width: 95px; height: 95px; left: 30%; animation-delay: 2.5s; animation-duration: 13s; }
+        .bubble:nth-child(13) { width: 110px; height: 110px; left: 55%; animation-delay: 0.7s; animation-duration: 11s; }
+        .bubble:nth-child(14) { width: 80px; height: 80px; left: 75%; animation-delay: 3.2s; animation-duration: 10s; }
+        .bubble:nth-child(15) { width: 115px; height: 115px; left: 20%; animation-delay: 1.8s; animation-duration: 12s; }
+        .bubble:nth-child(16) { width: 135px; height: 135px; left: 65%; animation-delay: 0.3s; animation-duration: 14s; }
+        .bubble:nth-child(17) { width: 90px; height: 90px; left: 15%; animation-delay: 2s; animation-duration: 8s; }
+        .bubble:nth-child(18) { width: 145px; height: 145px; left: 45%; animation-delay: 1.2s; animation-duration: 13s; }
+        .bubble:nth-child(19) { width: 70px; height: 70px; left: 70%; animation-delay: 3.5s; animation-duration: 9s; }
+        .bubble:nth-child(20) { width: 120px; height: 120px; left: 85%; animation-delay: 2.3s; animation-duration: 11s; }
+
+        /* Card styling */
+        .login-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Input field styling */
+        .form-control {
+            border: 0;
+            border-bottom: 2px solid #764ba2;
+            border-radius: 0;
+            box-shadow: none;
+            animation: slideIn 1.2s ease-out;
+        }
+
+        /* Button styling */
+        .btn-primary {
+            background-color: #764ba2;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            animation: bounceIn 1.5s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        /* Image styling */
+        .login-image {
+            width: 50%;
+            max-width: 300px;
+            margin-right: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Form container */
+        .form-container {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bubble elements -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <!-- Login form -->
+    <div class="login-card">
+        <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?t=st=1725356671~exp=1725360271~hmac=7dc17d021a3475b78d5cb416710a3d26a1c41a87a177fa2982c3e7305a129a1e&w=740" alt="Login Image" class="login-image">
+        <div class="form-container">
+            <h3 class="mb-4 text-center">Login</h3>
+            <form>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
